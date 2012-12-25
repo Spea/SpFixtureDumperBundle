@@ -1,0 +1,36 @@
+{
+    "name": "sp/fixture-dumper-bundle",
+    "type": "symfony-bundle",
+    "description": "Integration of the sp/fixture-dumper library with Symfony2",
+    "keywords": ["fixture-dumper", "dump", "fixtures"],
+    "license": "MIT",
+    "minimum-stability": "dev",
+    "authors": [
+        {
+            "name": "Martin Parsiegla",
+            "email": "martin.parsiegla@gmail.com",
+            "homepage": "http://speanet.info"
+        },
+        {
+            "name": "Community contributions",
+            "homepage": "https://github.com/Spea/SpFixtureDumperBundle/contributors"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.3",
+        "symfony/framework-bundle": ">=2.1,<2.3-dev",
+        "sp/fixture-dumper": "dev-master"
+    },
+    "config": {
+        "bin-dir": "bin"
+    },
+    "autoload": {
+        "psr-0": { "Sp\\FixtureDumperBundle": "" }
+    },
+    "target-dir": "Sp/FixtureDumperBundle",
+    "extra": {
+        "branch-alias": {
+            "dev-master": "0.1-dev"
+        }
+    }
+}
