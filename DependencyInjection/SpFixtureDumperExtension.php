@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Sp/FixtureDumperBundle.
+ * This file is part of the SpFixtureDumperBundle package.
  *
  * (c) Martin Parsiegla <martin.parsiegla@gmail.com>
  *
@@ -18,10 +18,8 @@ use Symfony\Component\DependencyInjection\Loader;
 
 /**
  * This is the class that loads and manages your bundle configuration
- *
- * @author Martin Parsiegla <parsiegla@kuponjo.de>
  */
-class SpFixtureDumper extends Extension
+class SpFixtureDumperExtension extends Extension
 {
     /**
      * {@inheritDoc}

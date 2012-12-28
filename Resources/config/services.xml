@@ -6,33 +6,38 @@
 
     <parameters>
         <parameter key="php_collection.map.class">PhpCollection\Map</parameter>
-        <parameter key="fixture_dumper.handler_registry.class">Sp\FixtureDumper\Converter\Handler\HandlerRegistry</parameter>
-        <parameter key="fixture_dumper.date_handler.class">Sp\FixtureDumper\Converter\Handler\DateHandler</parameter>
+        <parameter key="sp_fixture_dumper.handler_registry.class">Sp\FixtureDumper\Converter\Handler\HandlerRegistry</parameter>
+        <parameter key="sp_fixture_dumper.date_handler.class">Sp\FixtureDumper\Converter\Handler\DateHandler</parameter>
 
         <!-- Generator classes -->
-        <parameter key="fixture_dumper.class_fixture_generator.class">Sp\FixtureDumper\Converter\Handler\DateHandler</parameter>
-        <parameter key="fixture_dumper.alice.yaml_fixture_generator.class">Sp\FixtureDumper\Generator\Alice\YamlFixtureGenerator</parameter>
-        <parameter key="fixture_dumper.alice.array_fixture_generator.class">Sp\FixtureDumper\Generator\Alice\ArrayFixtureGenerator</parameter>
+        <parameter key="sp_fixture_dumper.class_fixture_generator.class">Sp\FixtureDumper\Generator\ClassFixtureGenerator</parameter>
+        <parameter key="sp_fixture_dumper.alice.yaml_fixture_generator.class">Sp\FixtureDumper\Generator\Alice\YamlFixtureGenerator</parameter>
+        <parameter key="sp_fixture_dumper.alice.array_fixture_generator.class">Sp\FixtureDumper\Generator\Alice\ArrayFixtureGenerator</parameter>
 
         <!-- Dumper classes -->
-        <parameter key="fixture_dumper.orm_dumper.class">Sp\FixtureDumper\ORMDumper</parameter>
-        <parameter key="fixture_dumper.mongo_db_dumper.class">Sp\FixtureDumper\MongoDBDumper</parameter>
+        <parameter key="sp_fixture_dumper.orm_dumper.class">Sp\FixtureDumper\ORMDumper</parameter>
+        <parameter key="sp_fixture_dumper.mongo_db_dumper.class">Sp\FixtureDumper\MongoDBDumper</parameter>
 
     </parameters>
 
     <services>
-        <service id="fixture_dumper.handler_registry" class="%fixture_dumper.handler_registry.class%" />
-        <service id="fixture_dumper.generators_map" class="%php_collection.map.class%" />
+        <service id="sp_fixture_dumper.handler_registry" class="%sp_fixture_dumper.handler_registry.class%" />
+        <service id="sp_fixture_dumper.generators_map" class="%php_collection.map.class%" />
 
         <!-- Generators -->
-        <service id="fixture_dumper.class_fixture_generator" class="%fixture_dumper.class_fixture_generator.class%">
-            <tag name="fixture_dumper.generator" alias="class" />
+        <service id="sp_fixture_dumper.class_fixture_generator" class="%sp_fixture_dumper.class_fixture_generator.class%">
+            <tag name="sp_fixture_dumper.generator" alias="class" />
         </service>
-        <service id="fixture_dumper.alice.yaml_fixture_generator" class="%fixture_dumper.alice.yaml_fixture_generator.class%">
-            <tag name="fixture_dumper.generator" alias="yml" />
+        <service id="sp_fixture_dumper.alice.yaml_fixture_generator" class="%sp_fixture_dumper.alice.yaml_fixture_generator.class%">
+            <tag name="sp_fixture_dumper.generator" alias="yml" />
         </service>
-        <service id="fixture_dumper.alice.array_fixture_generator" class="%fixture_dumper.array_fixture_generator.class%">
-            <tag name="fixture_dumper.generator" alias="array" />
+        <service id="sp_fixture_dumper.alice.array_fixture_generator" class="%sp_fixture_dumper.alice.array_fixture_generator.class%">
+            <tag name="sp_fixture_dumper.generator" alias="array" />
+        </service>
+
+        <!-- Handlers -->
+        <service id="sp_fixture_dumper.handler.date_handler" class="%sp_fixture_dumper.date_handler.class%">
+            <tag name="sp_fixture_dumper.handler" />
         </service>
     </services>
 </container>

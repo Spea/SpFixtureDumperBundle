@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Sp/FixtureDumperBundle.
+ * This file is part of the SpFixtureDumperBundle package.
  *
  * (c) Martin Parsiegla <martin.parsiegla@gmail.com>
  *
